@@ -1,0 +1,12 @@
+
+type User {
+
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  facebookId: String @unique
+  facebookName: String
+  facebookFriends: [User!]!
+
+}

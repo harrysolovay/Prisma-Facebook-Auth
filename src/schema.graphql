@@ -1,0 +1,27 @@
+# import Post from "./generated/prisma.graphql"
+
+type Query {
+  refreshToken: AuthPayload!
+  me: User!
+}
+
+type Mutation {
+  authenticate(facebookToken: String): AuthPayload!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  facebookId: String!
+  facebookName: String
+  facebookFriends: [User]
+
+}
